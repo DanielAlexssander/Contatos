@@ -1,7 +1,11 @@
 @charset "UTF-8";
 
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
-    font-family: "Inter", "Poppins", sans-serif;
+    font-family: "Cabin", sans-serif;
     background-image: linear-gradient(230deg, rgb(8, 8, 8) 50%, rgb(0, 6, 19));
     background-attachment: fixed;
     color: white;
@@ -9,9 +13,11 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 98vw;
-    height: 98vh;
+    width: 100vw;
+    height: 100vh;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 .face-image {
     width: 30%;
@@ -23,17 +29,67 @@ body {
 .face-image:hover {
     width: 31%;
 }
+.name {
+    margin-bottom: .5em;
+}
 .links-ul {
     list-style-type: none;
 }
+.copyBtn {
+    border: solid rgba(0, 91, 209, 0.726) 1px;
+    background: none;
+    color: rgba(0, 91, 209, 0.726);
+    padding: 1em;
+    margin-bottom: .5em;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 16em;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.copyBtn:hover {
+    color: white;
+    background: rgba(0, 91, 209, 0.726);
+}
+.copyBtn:active {
+    background: rgb(255, 255, 255, 0.1);
+}
+.copyBtn:after {
+    content: "Copiado";
+    display: none;
+    color: white;
+    position: absolute;
+    top: -60px;
+    right: -14px;
+    background: rgba(0, 91, 209);
+    padding: 9px 10px;
+    border-radius: 20px;
+}
+.copyBtn:before {
+    content: "";
+    display: none;
+    position: absolute;
+    top: -30px;
+    right: 22px;
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 91, 209);
+    transform: rotate(45deg);
+}
+.copyBtn.active:before,
+.copyBtn.active:after {
+    display: block;
+}
+
 .links-ul li {
-   margin-bottom: .5em;
-   margin-right: 3em;
-   padding: 1em;
-   border: solid rgba(0, 91, 209, 0.726) 1px;
-   border-radius: 5px;
-   background-color: transparent;
-   transition: .5s;
+    display: block;
+    margin-bottom: .5em;
+    padding: 1em;
+    border: solid rgba(0, 91, 209, 0.726) 1px;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: .5s;
 }
 .links-ul li:hover {
     background-color: rgb(255, 255, 255, 0.05);
@@ -47,6 +103,7 @@ body {
 
 }
 .container-nav{
+    margin-top: 1.5em;
     text-align: center;
     margin-right: 1em;
 }
@@ -61,6 +118,9 @@ body {
     letter-spacing: .1em;
 }
 @media screen and (max-width: 715px) {
+    .copyBtn {
+        display: none;
+    }
     .container-nav{
         margin-right: .5em;
     }
@@ -71,6 +131,9 @@ body {
     }
 }
 @media screen and (max-width: 345px) {
+    .copyBtn {
+        margin-left: 12.5em;
+    }
     .container-nav a {
         margin: 1em;
     }
