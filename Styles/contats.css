@@ -118,6 +118,10 @@ body {
     letter-spacing: .1em;
 }
 @media screen and (max-width: 715px) {
+    .links-ul {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
     .copyBtn {
         display: none;
     }
